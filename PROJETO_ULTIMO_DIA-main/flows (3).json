@@ -1,0 +1,110 @@
+[
+    {
+        "id": "8e841199df18e708",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "23eed49f78499b03",
+        "type": "http in",
+        "z": "8e841199df18e708",
+        "name": "",
+        "url": "/tarefasPOST",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "5e6ae53447ab6ea1"
+            ]
+        ]
+    },
+    {
+        "id": "4dc95336966f407e",
+        "type": "http response",
+        "z": "8e841199df18e708",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8ac861ed31fbadfa",
+        "type": "http in",
+        "z": "8e841199df18e708",
+        "name": "",
+        "url": "/tarefasGET",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "b257a6875f5df0bc"
+            ]
+        ]
+    },
+    {
+        "id": "00e92f82ec0048f0",
+        "type": "http response",
+        "z": "8e841199df18e708",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5e6ae53447ab6ea1",
+        "type": "cloudantplus out",
+        "z": "8e841199df18e708",
+        "name": "",
+        "cloudant": "fb08fe184b21f073",
+        "database": "organizze2",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "insert",
+        "x": 490,
+        "y": 100,
+        "wires": [
+            [
+                "4dc95336966f407e"
+            ]
+        ]
+    },
+    {
+        "id": "b257a6875f5df0bc",
+        "type": "cloudantplus in",
+        "z": "8e841199df18e708",
+        "name": "",
+        "cloudant": "fb08fe184b21f073",
+        "database": "organizze2",
+        "service": "_ext_",
+        "search": "_all_",
+        "design": "",
+        "index": "",
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "00e92f82ec0048f0"
+            ]
+        ]
+    },
+    {
+        "id": "fb08fe184b21f073",
+        "type": "cloudantplus",
+        "host": "https://f1c0dcf9-5075-4061-a1f8-2f4ca596058a-bluemix.cloudantnosqldb.appdomain.cloud",
+        "name": "PrimeiraCredencial",
+        "useapikey": true
+    }
+]
