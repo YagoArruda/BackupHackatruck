@@ -1,0 +1,6 @@
+========= Ip dados/slides hackatruck
+IP: 192.168.128.150:8888
+
+========== Sites bons pra pesquisar 
+Hack with swiftui
+Create with swiftui

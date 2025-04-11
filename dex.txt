@@ -1,0 +1,93 @@
+192.168.128.91
+
+192.168.128.150:8888
+
+Node-red
+
+========================### Botão ###========================
+
+
+Button("Entrar") {
+                    showAlert = true
+                }.font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).alert(isPresented: $showAlert) {
+                    Alert(title: Text("Alerta!"), message: Text("Voce ira iniciar o desafio da aula agora"), dismissButton: .default(Text("Vamos La \(name)!")))
+                }.padding(.bottom,100)
+
+========================### TextField ###========================
+
+TextField("Seu Nome", text: $name).multilineTextAlignment(.center)
+
+TextField("0", value: $velocidade,format: .number).multilineTextAlignment(.center).keyboardType(.decimalPad)
+
+TextField("0", value: $tempo,format: .number).multilineTextAlignment(.center).keyboardType(.decimalPad).background().cornerRadius(15)
+
+========================### Imagem ###========================
+
+Image("Logo").resizable().frame(width:200 ,height: 200)
+
+Image("Fundo").resizable().scaledToFill().blur(radius: 5).opacity(0.4).frame(height: 1000)
+
+Image(imagem).resizable().frame(width: 300, height: 200).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/).scaledToFit()
+
+
+====== Formas
+
+Circle().frame(width:15,height:15).foregroundColor(.verdeClaro)
+
+
+======== Generico
+
+Color(corFundo).ignoresSafeArea()
+
+
+======== Tabview
+
+
+
+
+
+location(nome: "Teste", foto: "", descricao: "Local teste", latitude: -14, longitude: -52),
+
+.accentColor(.white)
+
+
+
+
+
+
+ HStack {
+                    AsyncImage(url: URL(string: personagem.image ?? "")) { phase in
+                        switch phase {
+                        case .empty:
+                            Image(systemName: "pin.circle.fill").resizable()
+                                .frame(width: 70,height: 70).scaledToFit()
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .frame(width: 350,height: 200).scaledToFit()
+                        case .failure:
+                            Image(systemName: "pin.circle.fill").resizable()
+                                .frame(width: 70,height: 70).scaledToFit()
+                        @unknown default:
+                            Image(systemName: "pin.circle.fill").resizable()
+                                .frame(width: 70,height: 70).scaledToFit()
+                        }
+                    }
+                    Text(personagem.name ?? "")
+                }
+
+
+
+
+CREDENCIAIS - BANCO DE DADOS IBM
+
+Host: https://f1c0dcf9-5075-4061-a1f8-2f4ca596058a-bluemix.cloudantnosqldb.appdomain.cloud
+API Key: qJIcYolW2i-Wv8BOK0pv1k3l5FLuk2quM-QqAjRHExmU
+
+Host: https://f1c0dcf9-5075-4061-a1f8-2f4ca596058a-bluemix.cloudantnosqldb.appdomain.cloud
+API Key: fNQCbk6WTO9MQ9o2qebm-g5TxZhnIG9T3LR_M6Krh-8t
+
+Host: https://f1c0dcf9-5075-4061-a1f8-2f4ca596058a-bluemix.cloudantnosqldb.appdomain.cloud
+API Key: IJ7ft60FbQ7wFVpXWam4HCxbRvDS7vBbTBYqI4JdwEZu
+
+
