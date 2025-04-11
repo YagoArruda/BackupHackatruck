@@ -1,0 +1,21 @@
+##### Ideias #####
+
+= Geral:
+- Incluir ODS
+
+##### ###### #####
+
+= Algo voltado para a produtividade usando IA
+- Gratuito
+- Permitir definir frequência
+
+= Adotar animais de estimação
+- API de racas de cachorro
+
+= Qualidade do ar
+- Usando a API e se possível, algum componente
+
+##### ###### #####
+
+Produto minimo viavel
+Dividir em manha tarde ou noite

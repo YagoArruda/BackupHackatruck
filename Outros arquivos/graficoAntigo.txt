@@ -1,0 +1,60 @@
+    
+
+    @State private var tarefas: [Tarefas] = [
+        .init(tipo: "Atrasadas", porcentagem: 20, cor: Color.red),
+        .init(tipo: "Em Espera", porcentagem: 30, cor: Color.yellow),
+        .init(tipo: "Finalizadas", porcentagem: 50, cor: Color.green)
+    ]
+
+
+
+        Chart(tarefas) { tarefa in
+                SectorMark(
+                    angle: .value(
+                        Text(verbatim: tarefa.tipo),
+                        tarefa.porcentagem
+                        
+                    ),
+                    innerRadius: .ratio(0.6),
+                    angularInset: 5
+                )
+                .foregroundStyle(tarefa.cor)
+                .annotation(position: .overlay){
+                    Text("**\(Int(tarefa.porcentagem))%**")
+                        .font(.title3)
+                    }
+            }.frame(width: 300,height: 300)
+
+
+--------------------------
+
+
+    @State private var tarefas: [Tarefas] = [
+        .init(tipo: "Atrasadas", porcentagem: 1, cor: Color.red),
+        .init(tipo: "Em Espera", porcentagem: 1, cor: Color.yellow),
+        .init(tipo: "Finalizadas", porcentagem: 1, cor: Color.green)
+    ]
+
+
+        Chart(tarefas) { tarefa in
+            SectorMark(
+                angle: .value(
+                    Text(verbatim: tarefa.tipo),
+                    tarefa.porcentagem
+                    
+                ),
+                innerRadius: .ratio(0.6),
+                angularInset: 5
+            )
+            .foregroundStyle(tarefa.cor)
+            .shadow(color: .gray, radius: 1, x: 5, y: 7)
+            
+        }.frame(width: 300,height: 300)
+            .animation(.easeInOut(duration: 2), value: 1.0)
+
+
+-----------------------------
+
+
+
+

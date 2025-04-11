@@ -1,0 +1,371 @@
+[
+    {
+        "id": "963ee65f65bdda70",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4bdf268f7d3a4c0f",
+        "type": "cloudantplus out",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "cloudant": "e66983b674f8e91e",
+        "database": "y_db_2",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "insert",
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "4a7b13d8889860af"
+            ]
+        ]
+    },
+    {
+        "id": "2bd94b40f4ea7a71",
+        "type": "http in",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "url": "/nitpost",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "c90c0f65ee8b3bf7"
+            ]
+        ]
+    },
+    {
+        "id": "4a7b13d8889860af",
+        "type": "http response",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a274d370084a26a7",
+        "type": "http in",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "url": "/nitget",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "e7722569f7dac3e5"
+            ]
+        ]
+    },
+    {
+        "id": "6c9c9b8ceeea91cc",
+        "type": "http response",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 450,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e7722569f7dac3e5",
+        "type": "cloudantplus in",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "cloudant": "e66983b674f8e91e",
+        "database": "y_db_2",
+        "service": "_ext_",
+        "search": "_all_",
+        "design": "",
+        "index": "",
+        "x": 300,
+        "y": 400,
+        "wires": [
+            [
+                "6c9c9b8ceeea91cc"
+            ]
+        ]
+    },
+    {
+        "id": "c90c0f65ee8b3bf7",
+        "type": "split",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 290,
+        "y": 320,
+        "wires": [
+            [
+                "4bdf268f7d3a4c0f"
+            ]
+        ]
+    },
+    {
+        "id": "5f73d01f172058a2",
+        "type": "http in",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "url": "/nitput",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "93fd3652900148d0"
+            ]
+        ]
+    },
+    {
+        "id": "f34ea1bbf6b3a360",
+        "type": "http response",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 590,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "1ab3eded0804a981",
+        "type": "cloudantplus out",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "cloudant": "e66983b674f8e91e",
+        "database": "y_db_2",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "insert",
+        "x": 440,
+        "y": 480,
+        "wires": [
+            [
+                "f34ea1bbf6b3a360"
+            ]
+        ]
+    },
+    {
+        "id": "5e5e70b792c7046b",
+        "type": "http in",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "url": "/nitdelete",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 560,
+        "wires": [
+            [
+                "068da1e9ad912036"
+            ]
+        ]
+    },
+    {
+        "id": "45947ad0ad189740",
+        "type": "http response",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 770,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "620bee1377676c03",
+        "type": "cloudantplus in",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "cloudant": "e66983b674f8e91e",
+        "database": "y_db_2",
+        "service": "_ext_",
+        "search": "_id_",
+        "design": "",
+        "index": "",
+        "x": 460,
+        "y": 560,
+        "wires": [
+            [
+                "cad2f329e29d950b"
+            ]
+        ]
+    },
+    {
+        "id": "cad2f329e29d950b",
+        "type": "cloudantplus out",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "cloudant": "e66983b674f8e91e",
+        "database": "y_db_2",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "delete",
+        "x": 620,
+        "y": 560,
+        "wires": [
+            [
+                "45947ad0ad189740"
+            ]
+        ]
+    },
+    {
+        "id": "068da1e9ad912036",
+        "type": "split",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 310,
+        "y": 560,
+        "wires": [
+            [
+                "620bee1377676c03"
+            ]
+        ]
+    },
+    {
+        "id": "93fd3652900148d0",
+        "type": "split",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 290,
+        "y": 480,
+        "wires": [
+            [
+                "1ab3eded0804a981"
+            ]
+        ]
+    },
+    {
+        "id": "0c8219870183ed3b",
+        "type": "cloudantplus out",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "cloudant": "e66983b674f8e91e",
+        "database": "y_db_3.3",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "insert",
+        "x": 300,
+        "y": 680,
+        "wires": [
+            [
+                "b6eecc6317b4c802"
+            ]
+        ]
+    },
+    {
+        "id": "e6f07c8dd6b8918e",
+        "type": "http in",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "url": "/tspost",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 680,
+        "wires": [
+            [
+                "0c8219870183ed3b"
+            ]
+        ]
+    },
+    {
+        "id": "b6eecc6317b4c802",
+        "type": "http response",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 450,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "df22cf772cbf8260",
+        "type": "http in",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "url": "/tsget",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 760,
+        "wires": [
+            [
+                "7c977c01c7592eae"
+            ]
+        ]
+    },
+    {
+        "id": "5ba1bf362e05558d",
+        "type": "http response",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 430,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "7c977c01c7592eae",
+        "type": "cloudantplus in",
+        "z": "963ee65f65bdda70",
+        "name": "",
+        "cloudant": "e66983b674f8e91e",
+        "database": "y_db_3.3",
+        "service": "_ext_",
+        "search": "_all_",
+        "design": "",
+        "index": "",
+        "x": 280,
+        "y": 760,
+        "wires": [
+            [
+                "5ba1bf362e05558d"
+            ]
+        ]
+    },
+    {
+        "id": "e66983b674f8e91e",
+        "type": "cloudantplus",
+        "host": "https://f1c0dcf9-5075-4061-a1f8-2f4ca596058a-bluemix.cloudantnosqldb.appdomain.cloud",
+        "name": "middle-api-2",
+        "useapikey": true
+    }
+]
